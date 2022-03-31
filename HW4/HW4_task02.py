@@ -42,4 +42,3 @@ def read_magic_number(path: str) -> bool:
         except ValueError:
             print("Error!!!")
 
-#print(read_magic_number("1.txt"))
