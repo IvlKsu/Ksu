@@ -27,17 +27,12 @@ import sys
 import re
 
 
-
 def my_precious_logger(text: str):
-    pass
-    def sorting_messages():
-        """
-        a function that sorts text by different file streams
-        """
-        list = (re.findall(r"[\w']+", text))
-        if "error" in list:
-            sys.stderr.write(text)
-        else:
-            sys.stdout.write(text)
-
-
+    """
+    a function that sorts text by different file streams
+    """
+    list = (re.findall(r"[\w']+", text))
+    if "error" in list:
+        sys.stderr.write(text)
+    else:
+        sys.stdout.write(text)
