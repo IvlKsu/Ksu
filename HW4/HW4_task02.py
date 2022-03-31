@@ -42,3 +42,15 @@ def read_magic_number(path: str) -> bool:
         except ValueError:
             print("Error!!!")
 
+"""
+
+>>> read_magic_number("Error_file.txt")
+'Error!!!'
+
+>>> read_magic_number("True_file.txt")
+True
+
+>>> read_magic_number("False_file.txt")
+False
+
+"""
