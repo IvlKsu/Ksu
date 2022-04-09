@@ -18,4 +18,4 @@ def test_create_homework():
 
 def test_do_homework():
     assert student.do_homework(expired_homework) is None
-    assert student.do_homework(oop_homework) == "You are late"
+    assert student.do_homework(oop_homework) == oop_homework
