@@ -8,14 +8,14 @@ teacher = Teacher('Daniil', 'Ivanov')
 
 
 def test_is_active():
-    assert expired_homework.is_active() == False
-    assert oop_homework.is_active() == True
+    assert expired_homework.is_active() is False
+    assert oop_homework.is_active() is True
 
 
 def test_create_homework():
     assert teacher.create_homework("do something", 5).text == 'do something'
 
 
-def test_student_do_hw_method():
+def test_do_homework():
     assert student.do_homework(expired_homework) is None
-    assert student.do_homework(oop_homework) == oop_homework
+    assert student.do_homework(oop_homework) == "You are late"
