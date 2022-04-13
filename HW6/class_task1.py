@@ -14,19 +14,20 @@ def instances_counter(cls):
     class Counter:
         counter = 0
 
-        @classmethod
         def __init__(self, ):
             Counter.counter += 1
 
         @classmethod
-        def get_created_instances(cls):
+        def get_created_instances(cls):#returns the number of instances of the class created
             print(Counter.counter)
+            return (Counter.counter)
 
         @classmethod
-        def reset_instances_counter(cls):
+        def reset_instances_counter(cls):#reset instance counter, returns value before reset
             save_counter = Counter.counter
             Counter.counter = 0
             print (save_counter)
+            return (save_counter)
 
     return Counter
 
