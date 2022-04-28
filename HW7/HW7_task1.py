@@ -33,7 +33,20 @@ example_tree = {
 
 
 def find_occurrences(tree: dict, element: Any) -> int:
-    return str(tree.values()).count(str(element)) #we return the number of times the specified word was encountered
-
+    def counter(dictionary, elem):
+        for val in (dictionary.values() if isinstance(dictionary,dict) else dictionary):
+            """
+            we generate a list consisting of the desired element.
+            Since the value can be str, list, tuple, dict, set, int, bool, then 
+            we are considering different options for generating a list from the desired element.
+            at the end, we output the number of items in the resulting list.
+            """
+            if val == elem:
+                yield val
+            elif isinstance(val, (list, tuple, set)):
+                yield from counter(val, elem)
+            elif isinstance(val, dict):
+                yield from counter(val.values(), elem)
+    return len(list(counter(tree, element)))
 
 
